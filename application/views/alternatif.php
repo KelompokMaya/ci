@@ -98,7 +98,7 @@
           </a>
           <ul class="treeview-menu">
             <li ><a href="<?php echo base_url()."index.php"; ?>/spk/kriteria"><i class="fa fa-circle-o"></i> Kriteria</a></li>
-            <li class="active"><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Alternatif</a></li>
+            <li class="active"><a href="<?php echo base_url()."index.php"; ?>/spk_alternatif/alternatif"><i class="fa fa-circle-o"></i> Alternatif</a></li>
             
             
           </ul>
@@ -121,7 +121,7 @@
       <h2><center> Tabel Perbandingan Kriteria </center></h2>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Kriteria</li>
+        <li class="active">Alternatif</li>
       </ol>
     </section>
 
@@ -165,7 +165,7 @@
                     <td class="text-center">
 
                    
-                    <a href="<?php echo base_url()."index.php/spk/lihat_edit_kriteria/".$row['id_alternatif']; ?>"  class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                    <a href="<?php echo base_url()."index.php/spk_alternatif/lihat_edit_alternatif/".$row['id_alternatif']; ?>"  class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                      <a href="<?php echo base_url()."index.php/spk_alternatif/hapus_alternatif/".$row['id_alternatif']; ?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                       </td>
   
@@ -214,30 +214,49 @@
           <div class="modal-content">
             <div class="modal-header" style="background: #00a65a; padding:15px 20px;">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h2 style="color: white" ><center><b>Tambah Kriteria</b></center></h2>
+              <h2 style="color: white" ><center><b>Tambah Alternatif</b></center></h2>
             </div>
             <div class="modal-body" style="padding:40px 50px;">
-              <form id="form_tambah_kriteria" class="form-horizontal" action="<?php echo base_url()."index.php/spk/tambah_kriteria"; ?>" method="post" enctype="multipart/form-data">
+              <form id="form_tambah_kriteria" class="form-horizontal" action="<?php echo base_url()."index.php/spk_alternatif/tambah_alternatif"; ?>" method="post" enctype="multipart/form-data">
               <div class="form-group">
-                  <label >Nama Kriteria</label>
-                  <input type="text" class="form-control" name="nama_kriteria" placeholder="Masukan Kriteria">
+                  <label >Nama Alternatif</label>
+                  <input type="text" class="form-control" name="nama_alternatif" placeholder="Masukan Alternatif">
                 </div>
                 <div class="form-group">
-                <label >Tipe Kriteria</label>
-                        <select name="kategori" class="form-control" required>
-                        <option value="1">Benefit</option>
-                        <option value="2">cost</option>
+                <label >Pendidikan Terakhir</label>
+                        <select name="nilai_kriteria1" class="form-control" required>
+                        <option value="1">SMA</option>
+                        <option value="2">S1</option>
+                        <option value="3">S2</option>
                         </select>  
                 </div>
                 <div class="form-group">
-                  <label >bobot</label>
-                  <input type="text" class="form-control" name="bobot" placeholder="masukan bobot kriteria">
+                  <label >Nilai IPK</label>
+                  <input type="text" class="form-control" name="nilai_kriteria2" placeholder="masukan nilai ipk">
                 </div>
                 <div class="form-group">
-                  
-                  <input type="hidden"  name="jml_bobot" value="<?php echo  $jum_bobot  ?>">
-                </div>  
-
+                <label >Usia</label>
+                        <select name="nilai_kriteria3" class="form-control" required>
+                        <option value="5">23 – 25 tahun</option>
+                        <option value="4">26 – 28 tahun </option>
+                        <option value="3">29 – 31 tahun</option>
+                        <option value="2">32 – 34 tahun</option>
+                        <option value="1">35 tahun</option>
+                        </select>  
+                </div>
+                <div class="form-group">
+                  <label >Komunikasi</label>
+                  <input type="text" class="form-control" name="nilai_kriteria4" placeholder="masukan nilai">
+                </div>
+                <div class="form-group">
+                  <label >Wawancara</label>
+                  <input type="text" class="form-control" name="nilai_kriteria5" placeholder="masukan nilai">
+                </div>
+                <div class="form-group">
+                  <label >Tes Tulis</label>
+                  <input type="text" class="form-control" name="nilai_kriteria6" placeholder="masukan nilai">
+                </div>
+                
                 
                   <button type="submit" href="index.php" type="submit" name="add" value="Simpan" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Tambah</button>
               </form>
@@ -260,7 +279,7 @@
             <!---script daftar penyelenggara-->
       <script>
       $(document).ready(function(){
-          $("#tambah-kriteria").click(function(){
+          $(".btn-success").click(function(){
               $("#Modal-tambah-kriteria").modal();
           });
       });

@@ -32,7 +32,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url()."index.php"; ?>/spk/kriteria"><i class="fa fa-circle-o"></i> Kriteria</a></li>
-            <li><a href="<?php echo base_url()."index.php"; ?>/spk/alternatif"><i class="fa fa-circle-o"></i> Alternatif</a></li>
+            <li><a href="<?php echo base_url()."index.php"; ?>/spk_alternatif/alternatif"><i class="fa fa-circle-o"></i> Alternatif</a></li>
             
           </ul>
         </li>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +33,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>S</b>PK</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>SPK</b> METODE AHP</span>
+      <span class="logo-lg"><b>SPK</b> METODE SAW</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -88,7 +89,7 @@
           </a>
         </li>
         
-        <li class=" active treeview">
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
             <span>Komponen</span>
@@ -97,8 +98,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="<?php echo base_url()."index.php"; ?>/spk/kriteria"><i class="fa fa-circle-o"></i> Kriteria</a></li>
-            <li><a href="<?php echo base_url()."index.php"; ?>/spk_alternatif/alternatif"><i class="fa fa-circle-o"></i> Alternatif</a></li>
+            <li><a href="<?php echo base_url()."index.php"; ?>/spk/kriteria"><i class="fa fa-circle-o"></i> Kriteria</a></li>
+            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Alternatif</a></li>
             
             
           </ul>
@@ -118,77 +119,82 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h2><center> Tabel Perbandingan Kriteria </center></h2>
+      <h1>
+        Ubah Kriteria
+      </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Kriteria</li>
       </ol>
     </section>
-
-    <!-- Main content -->
+<!-- Main content -->
     <section class="content">
       
+
+
       <!-- Main row -->
       <div class="row">
         <!-- Left col -->
-        <section class="col-lg-12 connectedSortable">
+        <section class="col-lg-9 connectedSortable">
           
+          
+          <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-8">
+        <div class="page-header">
+      
+      </div>
+      
+          <form style="position: fixed; top: 10%; left: 40%; width: 500px; " method="post" action="<?php echo base_url()."index.php/spk_alternatif/edit_alternatif" ?>">
+            <div class="form-group">
+            
+            <input type="hidden" name="id_alternatif" value="<?php echo $id_alternatif; ?>"  >
+          </div>
+          <div class="form-group">
+              <label >Nama Alternatif</label>
+              <input type="text" class="form-control" name="nama_alternatif" value="<?php echo $nama_alternatif; ?>">
+          </div>
+          <div class="form-group">
+                <label >Pendidikan Terakhir</label>
+                        <select name="nilai_kriteria1" class="form-control" required>
+                        <option value="1">SMA</option>
+                        <option value="2">S1</option>
+                        <option value="3">S2</option>
+                        </select>  
+          </div>
+          <div class="form-group">
+                  <label >Nilai IPK</label>
+                  <input type="text" class="form-control" name="nilai_kriteria2"  value="<?php echo $nilai_kriteria2; ?>">
+          </div>
+          <div class="form-group">
+                <label >Usia</label>
+                        <select name="nilai_kriteria3" class="form-control" required>
+                        <option value="5">23 – 25 tahun</option>
+                        <option value="4">26 – 28 tahun </option>
+                        <option value="3">29 – 31 tahun</option>
+                        <option value="2">32 – 34 tahun</option>
+                        <option value="1">35 tahun</option>
+                        </select>  
+          </div> 
+          <div class="form-group">
+                  <label >Komunikasi</label>
+                  <input type="text" class="form-control" name="nilai_kriteria4" value="<?php echo $nilai_kriteria4; ?>">
+                </div>
+                <div class="form-group">
+                  <label >Wawancara</label>
+                  <input type="text" class="form-control" name="nilai_kriteria5" value="<?php echo $nilai_kriteria5; ?>">
+                </div>
+                <div class="form-group">
+                  <label >Tes Tulis</label>
+                  <input type="text" class="form-control" name="nilai_kriteria6" value="<?php echo $nilai_kriteria6; ?>">
+                </div>
+
+          <button type="submit" class="btn btn-primary">Ubah</button>
+          <button type="button" onclick="location.href='<?php echo base_url()."index.php"; ?>/spk_alternatif/alternatif'" class="btn btn-success">Kembali</button>
+        </form>
         
-          <table border="1" style="text-align: center" class="table table-striped ">
-                <thead style=";background: #3c8dbc;color: white">
-                    <td style="width: 200px">Kriteria</td>
-                    <td style="width: 150px">Pendidikan Terakhir</td>
-                    <td style="width: 150px">Nilai IPK</td>
-                    <td style="width: 150px">Usia</td>
-                    <td style="width: 150px">Komunikasi</td>
-                    <td style="width: 150px">Wawancara</td>
-                    <td style="width: 150px">Tes Tulis</td>
-                    <td style="width: 150px">Edit</td>
-                    
-                    
-                </thead>
-             
-                  <?php 
-           
-                $i=1;
-                foreach ($data as $row) {
- ?>
-                <tbody>
-              <tr style="text-align: center;">
-                    <td style="background: #3c8dbc;color: white"><?php echo $row['nama_kriteria'];  ?></td>
-                    <td><?php echo $row['perbandingan_ket1'];  ?></td>
-                    <td><?php echo $row['perbandingan_ket2'];  ?></td>
-                    <td><?php echo $row['perbandingan_ket3'];  ?></td>
-                    <td><?php echo $row['perbandingan_ket4'];  ?></td>
-                    <td><?php echo $row['perbandingan_ket5'];  ?></td>
-                    <td><?php echo $row['perbandingan_ket6'];  ?></td>
-                    <td class="text-center">
-
-                    <?php if ($i!=6) { ?>
-                    <a href="<?php echo base_url()."index.php/spk/lihat_edit_kriteria/".$row['id_kriteria']; ?>"  class="btn btn-warning"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                      
-                    <?php
-
-                     $i++; 
-                      }  ?>
-                    
-                    
-                   
-
-                    </td>
-              </tr>
-              </tbody>
-              <?php 
-               }  ?>
-   
-
-          </table>
-
-
-                    
-             
-                    <a href="<?php echo base_url()."index.php/spk/normalisasi_kriteria"?>" style="width: 28%"   class="btn btn-block btn-success btn-lg"> Lihat Tabel Normalisasi</a>
-                  
+      </div>
+      
+    </div>
 
         </section>
         <!-- right col -->
@@ -197,34 +203,13 @@
 
     </section>
     <!-- /.content -->
+
+   
   </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>WWW.KIM-ARYA.16MB.COM</b>
-    </div>
-    <strong>Copyright &copy; 2017 <a href="#">KIM ARYA PRODUCTION</a>.</strong> All rights
-    reserved.
-  </footer>
-
-<!-- ./wrapper -->
-
-      
-
-
-
-      
-    
-
-
-  
-        <!-- jQuery 2.2.3 -->
-<script src="<?php echo base_url()."assets/";?>plugins/jQuery/jquery-2.2.3.min.js"></script>
-            <!---script daftar penyelenggara-->
-     
-      
+ 
 
 </body>
+<script src="<?php echo base_url()."assets/";?>plugins/jQuery/jquery-2.2.3.min.js"></script>
 
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>

@@ -100,7 +100,7 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a href="<?php echo base_url()."index.php"; ?>/spk/kriteria"><i class="fa fa-circle-o"></i> Kriteria</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Alternatif</a></li>
+            <li><a href="<?php echo base_url()."index.php"; ?>/spk_alternatif/alternatif"><i class="fa fa-circle-o"></i> Alternatif</a></li>
             
             
           </ul>

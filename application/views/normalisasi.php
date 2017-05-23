@@ -98,7 +98,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url()."index.php"; ?>/spk/kriteria"><i class="fa fa-circle-o"></i> Kriteria</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Alternatif</a></li>
+            <li><a href="<?php echo base_url()."index.php"; ?>/spk_alternatif/alternatif"><i class="fa fa-circle-o"></i> Alternatif</a></li>
             
             
           </ul>
@@ -121,7 +121,7 @@
     <h2><center> Tabel Normalisasi Kriteria </center></h2>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Kriteria</li>
+        <li >Kriteria</li><li class="active">Normalisasi</li>
       </ol>
     </section>
 
@@ -175,8 +175,8 @@
    
 
           </table>
-           <h3>Nilai CI : <?php echo $data['$ci'];  ?>
-          <?php if ($data['$ci']<=0.1||$data['$ci']=0) { ?>
+           <h3>Nilai CI : <?php echo $data['$konsisten'];  ?>
+          <?php if ($data['$konsisten']<=0.1||$data['$konsisten']=0) { ?>
                (konsisten) </h3>
           <?php }else { ?>
                (tidak konsisten)  </h3>
@@ -202,68 +202,9 @@
     reserved.
   </footer>
 
-<!-- ./wrapper -->
-
-<div class="container">
-     <!-- Modal tambah kriteria -->
-      <div class="modal fade" id="Modal-tambah-kriteria" role="dialog">
-        <div class="modal-dialog">
-        
-          <div class="modal-content">
-            <div class="modal-header" style="background: #00a65a; padding:15px 20px;">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h2 style="color: white" ><center><b>Tambah Kriteria</b></center></h2>
-            </div>
-            <div class="modal-body" style="padding:40px 50px;">
-              <form id="form_tambah_kriteria" class="form-horizontal" action="<?php echo base_url()."index.php/spk/tambah_kriteria"; ?>" method="post" enctype="multipart/form-data">
-              <div class="form-group">
-                  <label >Nama Kriteria</label>
-                  <input type="text" class="form-control" name="nama_kriteria" placeholder="Masukan Kriteria">
-                </div>
-                <div class="form-group">
-                <label >Tipe Kriteria</label>
-                        <select name="kategori" class="form-control" required>
-                        <option value="1">Benefit</option>
-                        <option value="2">cost</option>
-                        </select>  
-                </div>
-                <div class="form-group">
-                  <label >bobot</label>
-                  <input type="text" class="form-control" name="bobot" placeholder="masukan bobot kriteria">
-                </div>
-                <div class="form-group">
-                  
-                  <input type="hidden"  name="jml_bobot" value="<?php echo  $jum_bobot  ?>">
-                </div>  
-
-                
-                  <button type="submit" href="index.php" type="submit" name="add" value="Simpan" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Tambah</button>
-              </form>
-            </div>     
-          </div>
-        </div>
-      </div> 
-      </div>
-      
-
-
-
-      
-    
-
-
-  
         <!-- jQuery 2.2.3 -->
 <script src="<?php echo base_url()."assets/";?>plugins/jQuery/jquery-2.2.3.min.js"></script>
-            <!---script daftar penyelenggara-->
-      <script>
-      $(document).ready(function(){
-          $("#tambah-kriteria").click(function(){
-              $("#Modal-tambah-kriteria").modal();
-          });
-      });
-      </script>
-      
+  
 
 </body>
 

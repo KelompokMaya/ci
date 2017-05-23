@@ -22,7 +22,7 @@ class Spk extends CI_Controller {
  
 	}
 	
-	public function lihat_edit_kriteria($id_kriteria){
+	/*public function lihat_edit_kriteria($id_kriteria){
 		$data_k = $this->mspk->GetKriteria(" where id_kriteria = '$id_kriteria'");
 		
 		$data = array(
@@ -32,7 +32,7 @@ class Spk extends CI_Controller {
 			);
 
 		$this->load->view('edit_kriteria',$data);
-	}
+	}*/
 	public function edit_kriteria()
 	{
 
@@ -264,7 +264,9 @@ class Spk extends CI_Controller {
 		$konsisten=($kali_matrik[1]/$bobot[1]+$kali_matrik[2]/$bobot[2]+$kali_matrik[3]/$bobot[3]+$kali_matrik[4]/$bobot[4]+$kali_matrik[5]/$bobot[5]+$kali_matrik[6]/$bobot[6])/6;
 		//echo $konsisten,'<br>';
 
-		$data['$ci']=($konsisten-6)/5;
+
+		$ci=($konsisten-6)/5;
+		$data['$konsisten']=$ci/1.24;
 		
 
 
@@ -272,47 +274,12 @@ class Spk extends CI_Controller {
 		$this->load->view('normalisasi',array('data' =>$data)); 
 			
 	}
-	public function cek_konsisten()
-	{
-		$data=$this->mspk->GetKonsisten();
-		$i=1;
-		foreach ($data as $row) {
-			
-				$bobot[$i]=$row['bobot'];
-				
-				$i++;	
-			}
-
-		$i=1;
-		foreach ($data as $row) {
-		
-		$kali_matrik[$i]=($row['perbandingan_ket1']*$bobot[1])+($row['perbandingan_ket2']*$bobot[2])+($row['perbandingan_ket3']*$bobot[3])+($row['perbandingan_ket4']*$bobot[4])+($row['perbandingan_ket5']*$bobot[5])+($row['perbandingan_ket6']*$bobot[6]);	
-			echo $kali_matrik[$i],'<br>';
-			$i++;
-		}	
-		
-		
-
-
-		
-
-		$konsisten=($kali_matrik[1]/$bobot[1]+$kali_matrik[2]/$bobot[2]+$kali_matrik[3]/$bobot[3]+$kali_matrik[4]/$bobot[4]+$kali_matrik[5]/$bobot[5]+$kali_matrik[6]/$bobot[6])/6;
-		echo $konsisten,'<br>';
-
-		$ci=($konsisten-6)/5;
-		echo $ci;
+	
 		
 
 		
-	}
-	public function alternatif()
-	{
-		
 
-		$data=$this->mspk->GetAlternatif();
-		$this->load->view('alternatif',array('data' =>$data)); 
- 
-	}
+	
 
 	
 
