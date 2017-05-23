@@ -158,7 +158,19 @@
                     <td style=";background: #3c8dbc;color: white"><?php echo $row['nama_alternatif'];  ?></td>
                     <td><?php echo $row['nilai_kriteria1'];  ?></td>
                     <td><?php echo $row['nilai_kriteria2'];  ?></td>
-                    <td><?php echo $row['nilai_kriteria3'];  ?></td>
+                    
+                    <td><?php 
+                    if ($row['nilai_kriteria3']=='5') {
+                      echo "23 – 25 tahun";
+                    }if ($row['nilai_kriteria3']=='4') {
+                      echo "26 – 28 tahun";
+                    }if ($row['nilai_kriteria3']=='3') {
+                      echo "29 – 31 tahun";
+                    }if ($row['nilai_kriteria3']=='2') {
+                      echo "32 – 34 tahun";
+                    }if ($row['nilai_kriteria3']=='1') {
+                      echo ">35 tahun";
+                    }  ?></td>
                     <td><?php echo $row['nilai_kriteria4'];  ?></td>
                     <td><?php echo $row['nilai_kriteria5'];  ?></td>
                     <td><?php echo $row['nilai_kriteria6'];  ?></td>
@@ -241,7 +253,7 @@
                         <option value="4">26 – 28 tahun </option>
                         <option value="3">29 – 31 tahun</option>
                         <option value="2">32 – 34 tahun</option>
-                        <option value="1">35 tahun</option>
+                        <option value="1"> >35 tahun</option>
                         </select>  
                 </div>
                 <div class="form-group">

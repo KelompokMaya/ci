@@ -172,7 +172,7 @@
                         <option value="4">26 – 28 tahun </option>
                         <option value="3">29 – 31 tahun</option>
                         <option value="2">32 – 34 tahun</option>
-                        <option value="1">35 tahun</option>
+                        <option value="1"> >35 tahun</option>
                         </select>  
           </div> 
           <div class="form-group">

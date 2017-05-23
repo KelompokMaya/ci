@@ -98,7 +98,7 @@ class Spk_alternatif extends CI_Controller {
 		$dimana 		= array( 'id_alternatif' => $id_alternatif);
 
 
-		$edt = $this->mspk->EditKriteria('alternatif',$data_edit,$dimana);
+		$edt = $this->mspk_alternatif->EditAlternatif('alternatif',$data_edit,$dimana);
 
 		if($edt>=1){
 			echo "<script>
@@ -125,6 +125,73 @@ class Spk_alternatif extends CI_Controller {
 				redirect('spk_alternatif/alternatif');
 
 		}
+
+	}
+	public function ranking()
+	{
+		$this->db->empty_table('ranking');
+		$data=$this->mspk_alternatif->GetData();
+		$jum_kol1 = 0;$jum_kol2 = 0;$jum_kol3 = 0;$jum_kol4 = 0;$jum_kol5 = 0;$jum_kol6 = 0;
+		foreach($data as $row){
+
+			 $jum_kol1 += str_replace(",", "", $row['nilai_kriteria1']);
+			 $jum_kol2 += str_replace(",", "", $row['nilai_kriteria2']);
+			 $jum_kol3 += str_replace(",", "", $row['nilai_kriteria3']);
+			 $jum_kol4 += str_replace(",", "", $row['nilai_kriteria4']);
+			 $jum_kol5 += str_replace(",", "", $row['nilai_kriteria5']);
+			 $jum_kol6 += str_replace(",", "", $row['nilai_kriteria6']);
+			
+		}
+
+		//inisialisasi bobot kriteria
+		$getbobot=$this->mspk->GetKonsisten();
+		$i=1;
+		foreach ($getbobot as $row) {
+			
+				$bobot[$i]=$row['bobot'];
+				
+				$i++;	
+			}
+
+		//bobot dari 6 kriteria pada orang pertama 
+		$i=1;
+		foreach($data as $row){
+
+			$bobotalternatif1[$i]=$row['nilai_kriteria1']/$jum_kol1;
+			$bobotalternatif2[$i]=$row['nilai_kriteria2']/$jum_kol2;
+			$bobotalternatif3[$i]=$row['nilai_kriteria3']/$jum_kol3;
+			$bobotalternatif4[$i]=$row['nilai_kriteria4']/$jum_kol4;
+			$bobotalternatif5[$i]=$row['nilai_kriteria5']/$jum_kol5;
+			$bobotalternatif6[$i]=$row['nilai_kriteria6']/$jum_kol6;
+			
+
+			echo $bobotalternatif1[$i],'<br>';
+			echo $bobotalternatif2[$i],'<br>';
+			echo $bobotalternatif3[$i],'<br>';
+			echo $bobotalternatif4[$i],'<br>';
+			echo $bobotalternatif5[$i],'<br>';
+			echo $bobotalternatif6[$i],'<br>','<br>';
+
+			$i++;
+		}
+
+
+		//menentukan hasil kal matrik
+		$i=1;
+		foreach ($data as $row) {
+			$nama_alternatif[$i]=$row['nama_alternatif'];
+		
+			$hasil[$i]=($bobotalternatif1[$i]*$bobot[1])+($bobotalternatif2[$i]*$bobot[2])+($bobotalternatif3[$i]*$bobot[3])+($bobotalternatif4[$i]*$bobot[4])+($bobotalternatif5[$i]*$bobot[5])+($bobotalternatif6[$i]*$bobot[6]);	
+			//echo $hasil[$i],'<br>';
+			$proses_kedatabase= array( 'nama_alternatif' => $nama_alternatif[$i],
+									    'nilai' => $hasil[$i]
+										);
+			$this->db->insert('ranking',$proses_kedatabase);
+			$i++;
+			//print_r($proses_kedatabase);
+		}	
+		
+
 
 	}
 

@@ -3,19 +3,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Mspk_alternatif extends CI_Model {
 	
-	public function HapusAlternatif($Namatabel,$dimana){
+public function HapusAlternatif($Namatabel,$dimana){
 
 	$hps= $this->db->delete($Namatabel,$dimana);
 	return $hps;
 	}
-	public function GetAlternatif($dimana){
+public function GetAlternatif($dimana){
 		$this->db->where('id_alternatif',$dimana);
 	$data = $this->db->get('alternatif');
 	return $data->result_array();  
 	}
-	public function EditKriteria($Namatabel,$data,$dimama){
+public function EditAlternatif($Namatabel,$data,$dimama){
 	$edt= $this->db->update($Namatabel,$data,$dimama);
 	return $edt;
 
-}
+	}
+public function GetData($dimana=""){
+	$data = $this->db->get('alternatif'.$dimana);
+	return $data->result_array();  
+	}
+public function Ranking($Namatabel,$data){
+	$this->db->select('*');
+	$this->db->from('alternatif');
+	$this->db->join('ranking', 'alternatif.nama_alternatif = ranking.nama_alternatif');
+ 
+	$data = $this->db->get();
+	return $data->result_array();  
+	}
+
+
 }

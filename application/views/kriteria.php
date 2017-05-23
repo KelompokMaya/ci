@@ -161,7 +161,7 @@
                     <td><?php echo $row['perbandingan_ket3'];  ?></td>
                     <td><?php echo $row['perbandingan_ket4'];  ?></td>
                     <td><?php echo $row['perbandingan_ket5'];  ?></td>
-                    <td><?php echo $row['perbandingan_ket6'];  ?></td>
+                    <td style="height: 48px"><?php echo $row['perbandingan_ket6'];  ?></td>
                     <td class="text-center">
 
                     <?php if ($i!=6) { ?>

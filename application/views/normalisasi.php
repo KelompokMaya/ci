@@ -104,8 +104,8 @@
           </ul>
         </li>
         <li >
-          <a href="#">
-            <i class="fa fa-pencil"></i> <span>Input Nilai</span> 
+          <a href="<?php echo base_url()."index.php"; ?>/spk_alternatif/alternatif">
+            <i class="fa fa-trophy"></i> <span>Ranking</span> 
           </a>
         </li>
         </ul>
@@ -175,7 +175,7 @@
    
 
           </table>
-           <h3>Nilai CI : <?php echo $data['$konsisten'];  ?>
+           <h3>Nilai Konsistensi: <?php echo $data['$konsisten'];  ?>
           <?php if ($data['$konsisten']<=0.1||$data['$konsisten']=0) { ?>
                (konsisten) </h3>
           <?php }else { ?>

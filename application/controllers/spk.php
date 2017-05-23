@@ -21,8 +21,7 @@ class Spk extends CI_Controller {
 		$this->load->view('kriteria',array('data' =>$data)); 
  
 	}
-	
-	/*public function lihat_edit_kriteria($id_kriteria){
+	public function lihat_edit_kriteria($id_kriteria){
 		$data_k = $this->mspk->GetKriteria(" where id_kriteria = '$id_kriteria'");
 		
 		$data = array(
@@ -32,7 +31,7 @@ class Spk extends CI_Controller {
 			);
 
 		$this->load->view('edit_kriteria',$data);
-	}*/
+	}
 	public function edit_kriteria()
 	{
 
