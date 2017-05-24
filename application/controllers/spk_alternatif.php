@@ -165,12 +165,7 @@ class Spk_alternatif extends CI_Controller {
 			$bobotalternatif6[$i]=$row['nilai_kriteria6']/$jum_kol6;
 			
 
-			echo $bobotalternatif1[$i],'<br>';
-			echo $bobotalternatif2[$i],'<br>';
-			echo $bobotalternatif3[$i],'<br>';
-			echo $bobotalternatif4[$i],'<br>';
-			echo $bobotalternatif5[$i],'<br>';
-			echo $bobotalternatif6[$i],'<br>','<br>';
+			//echo $bobotalternatif1[$i],'<br>'; echo $bobotalternatif2[$i],'<br>'; echo $bobotalternatif3[$i],'<br>';echo $bobotalternatif4[$i],'<br>';echo $bobotalternatif5[$i],'<br>';echo $bobotalternatif6[$i],'<br>','<br>';
 
 			$i++;
 		}
@@ -188,13 +183,13 @@ class Spk_alternatif extends CI_Controller {
 										);
 			$this->db->insert('ranking',$proses_kedatabase);
 			$i++;
-			//print_r($proses_kedatabase);
+			
 		}	
+				$data=$this->mspk_alternatif->GetRanking();
+		$this->load->view('ranking',array('data' =>$data)); 
 		
-
-
 	}
-
+	
 	
 }
 	

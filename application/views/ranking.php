@@ -1,4 +1,70 @@
-<?php echo $header  ?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SPK | Dashboard</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="<?php echo base_url()."assets/";?>bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="<?php echo base_url()."assets/";?>dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="<?php echo base_url()."assets/";?>dist/css/skins/_all-skins.min.css">
+  
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="<?php echo base_url()."assets/";?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+
+  
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>S</b>PK</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>SPK</b> METODE AHP</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          
+         
+         
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" >
+              <img src="<?php echo base_url()."assets/";?>dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Alexander Pierce</span>
+            </a>
+            
+          </li>
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" >
+              
+              <span class="hidden-xs">Keluar</span>
+            </a>
+            
+          </li>
+        
+      </div>
+    </nav>
+  </header>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -16,14 +82,14 @@
      <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
-          <a href="#">
+        <li>
+          <a href="<?php echo base_url()."index.php"; ?>/spk/index">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span> 
           </a>
         </li>
         
-        <li class="treeview">
-          <a href="<?php echo base_url()."index.php"; ?>/spk/index">
+        <li class=" treeview">
+          <a href="#">
             <i class="fa fa-pie-chart"></i>
             <span>Komponen</span>
             <span class="pull-right-container">
@@ -34,9 +100,10 @@
             <li><a href="<?php echo base_url()."index.php"; ?>/spk/kriteria"><i class="fa fa-circle-o"></i> Kriteria</a></li>
             <li><a href="<?php echo base_url()."index.php"; ?>/spk_alternatif/alternatif"><i class="fa fa-circle-o"></i> Alternatif</a></li>
             
+            
           </ul>
         </li>
-        <li >
+       <li class="active treeview">
           <a href="<?php echo base_url()."index.php"; ?>/spk_alternatif/ranking">
             <i class="fa fa-trophy"></i> <span>Ranking</span> 
           </a>
@@ -51,13 +118,10 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>
+    <h2><center> Hasil Akhir </center></h2>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li >Kriteria</li><li class="active">Normalisasi</li>
       </ol>
     </section>
 
@@ -67,53 +131,53 @@
       <!-- Main row -->
       <div class="row">
         <!-- Left col -->
-        <section class="col-lg-12 connectedSortable">
-           <div class="col-md-12">
-          <div class="box box-solid">
-            
-            <!-- /.box-header -->
-            <div class="box-body">
-              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="item active">
-                    <center><img src="<?php echo base_url()."assets/"; ?>gambar/4.jpg" alt="First slide"></center>
+        
+          
+        
+          
 
+
+
+          <table align="center" border="1" style="text-align: center; width: 60%" class="table table-striped ">
+                <thead style=";background: #3c8dbc;color: white">
+                    <td style="width: 100px">No </td>
+                    <td>Nama</td>
+                    <td>Nilai</td>
+                    <td style="width: 150px">Peringkat</td>
                     
-                  </div>
+                    
+                    
+                </thead>
+             
+                   <?php 
+           
+                $i=1;
+                foreach ($data as $row ) {
                   
-                  <div class="item">
-                    <center><img src="<?php echo base_url()."assets/"; ?>gambar/5.jpg" alt="Third slide"></center>
+
+ ?>
+
+                <tbody>
+              <tr style="text-align: center;">
+                    <td><?php echo $i;  ?> </td>
+                    <td><?php echo $row['nama_alternatif'];  ?></td>
+                    <td><?php echo $row['nilai'];  ?></td>
+                    <td><?php echo  "Peringkat ".$i;  ?></td>
 
                     
-                  </div>
-                  <div class="item">
-                    <center><img src="<?php echo base_url()."assets/"; ?>gambar/6.jpg" alt="Third slide"></center>
+              </tr>
+              </tbody>
+              <?php 
+              $i++;
+               }  ?>
 
-                    
-                  </div>
-                </div>
-                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                  <span class="fa fa-angle-left"></span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                  <span class="fa fa-angle-right"></span>
-                </a>
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
+          </table>
           
-            
+                
+         
           
 
-        </section>
+    
         <!-- right col -->
       </div>
       <!-- /.row (main row) -->
@@ -130,13 +194,12 @@
     reserved.
   </footer>
 
-<!-- ./wrapper -->
-
-
+        <!-- jQuery 2.2.3 -->
+<script src="<?php echo base_url()."assets/";?>plugins/jQuery/jquery-2.2.3.min.js"></script>
+  
 
 </body>
-<!-- jQuery 2.2.3 -->
-<script src="<?php echo base_url()."assets/";?>plugins/jQuery/jquery-2.2.3.min.js"></script>
+
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->

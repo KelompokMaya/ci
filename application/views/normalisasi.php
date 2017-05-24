@@ -104,7 +104,7 @@
           </ul>
         </li>
         <li >
-          <a href="<?php echo base_url()."index.php"; ?>/spk_alternatif/alternatif">
+          <a href="<?php echo base_url()."index.php"; ?>/spk_alternatif/ranking">
             <i class="fa fa-trophy"></i> <span>Ranking</span> 
           </a>
         </li>

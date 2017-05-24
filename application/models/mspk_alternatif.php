@@ -22,14 +22,18 @@ public function GetData($dimana=""){
 	$data = $this->db->get('alternatif'.$dimana);
 	return $data->result_array();  
 	}
-public function Ranking($Namatabel,$data){
+/*public function Ranking($Namatabel,$data){
 	$this->db->select('*');
 	$this->db->from('alternatif');
 	$this->db->join('ranking', 'alternatif.nama_alternatif = ranking.nama_alternatif');
  
 	$data = $this->db->get();
 	return $data->result_array();  
-	}
-
+	} */
+public function GetRanking(){
+	$this->db->order_by('nilai','DESC');
+	$ranking= $this->db->get('ranking' );
+	return $ranking->result_array();  
+}
 
 }
