@@ -3,7 +3,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Spk extends CI_Controller {
 
-
+	public function __construct()
+    {
+        parent::__construct();
+		if ($this->session->userdata('username')=="") {
+			redirect('login');
+		}elseif($this->session->userdata('level') == '2'){
+			redirect('spk_alternatif');
+		}
+        $this->load->helper('url');
+        $this->load->model('mspk_alternatif');     
+    }
 	public function index()
 	{
 		$comp = array(
@@ -209,6 +219,8 @@ class Spk extends CI_Controller {
 			 $jum_kol6 += str_replace(",", "", $row['perbandingan_ket6']);
 
 			}
+
+
 			$where=1;
 
 
@@ -268,7 +280,7 @@ class Spk extends CI_Controller {
 		$data['$konsisten']=$ci/1.24;
 		
 
-
+		//echo $ci;
 		$data['$normalisasi']=$this->mspk->GetNormalisasi();
 		$this->load->view('normalisasi',array('data' =>$data)); 
 			

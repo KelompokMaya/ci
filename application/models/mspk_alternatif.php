@@ -18,8 +18,8 @@ public function EditAlternatif($Namatabel,$data,$dimama){
 	return $edt;
 
 	}
-public function GetData($dimana=""){
-	$data = $this->db->get('alternatif'.$dimana);
+public function GetData(){
+	$data = $this->db->get('alternatif');
 	return $data->result_array();  
 	}
 /*public function Ranking($Namatabel,$data){

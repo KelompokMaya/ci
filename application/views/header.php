@@ -23,12 +23,21 @@
 
   
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<?php if($this->session->userdata('level') == '1'){
+            ?>
+        <body class="hold-transition skin-blue sidebar-mini">
+
+        <?php } else { ?>
+         <body class="hold-transition skin-purple sidebar-mini">
+     
+        <?php }?>
+
+
 <div class="wrapper">
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>S</b>PK</span>
       <!-- logo for regular state and mobile devices -->
@@ -50,12 +59,12 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" >
               <img src="<?php echo base_url()."assets/";?>dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs"><?php echo $this->session->userdata('username') ?></span>
             </a>
             
           </li>
           <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" >
+            <a href="<?php echo base_url()."index.php"?>/spk_alternatif/logout" class="dropdown-toggle" >
               
               <span class="hidden-xs">Keluar</span>
             </a>

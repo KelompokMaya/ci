@@ -7,8 +7,8 @@ public function GetKriteria($dimana=""){
 	$data = $this->db->get('bobotkriteria'.$dimana);
 	return $data->result_array();  
 	}
-public function GetNormalisasi($dimana=""){
-	$data = $this->db->get('normalisasi_kriteria'.$dimana);
+public function GetNormalisasi(){
+	$data = $this->db->get('normalisasi_kriteria');
 	return $data->result_array();  
 	}
 public function GetKonsisten($dimana=""){
