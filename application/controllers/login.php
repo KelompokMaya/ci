@@ -26,7 +26,7 @@ class Login extends CI_Controller{
 	//function for processing login form
 	public function login_process(){
 		$username = $this->input->post('username');
-		$password = $this->input->post('password');
+		$password = md5($this->input->post('password'));
 					//calling chech_user() function in Login_model.php
 		$result = $this->m_login->check_user($username, $password); 
 
@@ -53,8 +53,11 @@ class Login extends CI_Controller{
 			}
 		}
 		else{
-			echo $username;
-			echo $password;
+			echo "<script>
+				alert('username dan password salah!!');
+				window.location.href='index';
+				</script>";
+
 		}
 	}
 	

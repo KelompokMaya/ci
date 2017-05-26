@@ -28,7 +28,7 @@
         <body class="hold-transition skin-blue sidebar-mini">
 
         <?php } else { ?>
-         <body class="hold-transition skin-purple sidebar-mini">
+         <body class="hold-transition skin-green sidebar-mini">
      
         <?php }?>
 
@@ -58,7 +58,16 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" >
-              <img src="<?php echo base_url()."assets/";?>dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+            <?php if($this->session->userdata('level') == '1'){
+            ?>
+       <img src="<?php echo base_url()."assets/";?>gambar/manager.png" class="user-image" alt="User Image">
+
+        <?php } else { ?>
+        <img src="<?php echo base_url()."assets/";?>gambar/staff.png" class="user-image" alt="User Image">
+     
+        <?php }?>
+              
+
               <span class="hidden-xs"><?php echo $this->session->userdata('username') ?></span>
             </a>
             

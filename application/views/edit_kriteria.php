@@ -91,13 +91,13 @@
                     <td style="width: 230px"><select class="form-control" name="perbandingan_ket2">
                     <option  value='1'>sama penting dari</option>
                     <option  value='3'>cukup penting dari</option>
-                    <option  value='0.3333333333333333'>tidak cukup penting dari</option>
+                    <option  value='0.3333333333333333'>tidak cukup penting dari (1/3)</option>
                     <option  value='5'>lebih penting dari</option>
-                    <option  value='0.2'>tidak lebih penting dari</option>
+                    <option  value='0.2'>tidak lebih penting dari (1/5)</option>
                     <option  value='7'>sangat lebih penting dari</option>
-                    <option  value='0.1428571428571429'>tidak sangat lebih penting dari</option>
+                    <option  value='0.1428571428571429'>tidak sangat lebih penting dari (1/7)</option>
                     <option  value='9'>mutlak lebih penting dari</option>
-                    <option  value='0.1111111111111111'>tidak mutlak lebih penting dari</option>
+                    <option  value='0.1111111111111111'>tidak mutlak lebih penting dari (1/9)</option>
                           </select></td>
                     <td style="width: 150px"><label>Nilai IPK</label></td>
                     </tr>
@@ -108,13 +108,13 @@
                     <td style="width: 230px"><select class="form-control" name="perbandingan_ket3">
                     <option  value='1'>sama penting dari</option>
                     <option  value='3'>cukup penting dari</option>
-                    <option  value='0.3333333333333333'>tidak cukup penting dari</option>
+                    <option  value='0.3333333333333333'>tidak cukup penting dari (1/3)</option>
                     <option  value='5'>lebih penting dari</option>
-                    <option  value='0.2'>tidak lebih penting dari</option>
+                    <option  value='0.2'>tidak lebih penting dari (1/5)</option>
                     <option  value='7'>sangat lebih penting dari</option>
-                    <option  value='0.1428571428571429'>tidak sangat lebih penting dari</option>
+                    <option  value='0.1428571428571429'>tidak sangat lebih penting dari (1/7)</option>
                     <option  value='9'>mutlak lebih penting dari</option>
-                    <option  value='0.1111111111111111'>tidak mutlak lebih penting dari</option>
+                    <option  value='0.1111111111111111'>tidak mutlak lebih penting dari (1/9)</option>
                           </select></td>
                     <td style="width: 150px"><label>Usia</label></td>
                     </tr>
@@ -124,13 +124,13 @@
                     <td style="width: 230px"><select class="form-control" name="perbandingan_ket4">
                     <option  value='1'>sama penting dari</option>
                     <option  value='3'>cukup penting dari</option>
-                    <option  value='0.3333333333333333'>tidak cukup penting dari</option>
+                    <option  value='0.3333333333333333'>tidak cukup penting dari (1/3)</option>
                     <option  value='5'>lebih penting dari</option>
-                    <option  value='0.2'>tidak lebih penting dari</option>
+                    <option  value='0.2'>tidak lebih penting dari (1/5)</option>
                     <option  value='7'>sangat lebih penting dari</option>
-                    <option  value='0.1428571428571429'>tidak sangat lebih penting dari</option>
+                    <option  value='0.1428571428571429'>tidak sangat lebih penting dari (1/7)</option>
                     <option  value='9'>mutlak lebih penting dari</option>
-                    <option  value='0.1111111111111111'>tidak mutlak lebih penting dari</option>
+                    <option  value='0.1111111111111111'>tidak mutlak lebih penting dari (1/9)</option>
                           </select></td>
                     <td style="width: 150px"><label>Komunikasi</label></td>
                     </tr>
@@ -138,15 +138,15 @@
                <tr>
                     <td style="width: 150px"><label><?php echo $nama_kriteria; ?></label></td>
                     <td style="width: 230px"><select class="form-control" name="perbandingan_ket5">
-                    <option  value='1'>sama penting dari</option>
+                   <option  value='1'>sama penting dari</option>
                     <option  value='3'>cukup penting dari</option>
-                    <option  value='0.3333333333333333'>tidak cukup penting dari</option>
+                    <option  value='0.3333333333333333'>tidak cukup penting dari (1/3)</option>
                     <option  value='5'>lebih penting dari</option>
-                    <option  value='0.2'>tidak lebih penting dari</option>
+                    <option  value='0.2'>tidak lebih penting dari (1/5)</option>
                     <option  value='7'>sangat lebih penting dari</option>
-                    <option  value='0.1428571428571429'>tidak sangat lebih penting dari</option>
+                    <option  value='0.1428571428571429'>tidak sangat lebih penting dari (1/7)</option>
                     <option  value='9'>mutlak lebih penting dari</option>
-                    <option  value='0.1111111111111111'>tidak mutlak lebih penting dari</option>
+                    <option  value='0.1111111111111111'>tidak mutlak lebih penting dari (1/9)</option>
                           </select></td>
                     <td style="width: 150px"><label>Wawancara</label></td>
                     </tr>
@@ -156,13 +156,13 @@
                     <td style="width: 230px"><select class="form-control" name="perbandingan_ket6">
                     <option  value='1'>sama penting dari</option>
                     <option  value='3'>cukup penting dari</option>
-                    <option  value='0.3333333333333333'>tidak cukup penting dari</option>
+                    <option  value='0.3333333333333333'>tidak cukup penting dari (1/3)</option>
                     <option  value='5'>lebih penting dari</option>
-                    <option  value='0.2'>tidak lebih penting dari</option>
+                    <option  value='0.2'>tidak lebih penting dari (1/5)</option>
                     <option  value='7'>sangat lebih penting dari</option>
-                    <option  value='0.1428571428571429'>tidak sangat lebih penting dari</option>
+                    <option  value='0.1428571428571429'>tidak sangat lebih penting dari (1/7)</option>
                     <option  value='9'>mutlak lebih penting dari</option>
-                    <option  value='0.1111111111111111'>tidak mutlak lebih penting dari</option>
+                    <option  value='0.1111111111111111'>tidak mutlak lebih penting dari (1/9)</option>
                           </select></td>
                     <td style="width: 150px"><label>Tes Tulis</label></td>
                     </tr>

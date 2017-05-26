@@ -30,13 +30,13 @@ class Spk_alternatif extends CI_Controller {
   
     public function tambah_alternatif()
 	{
-		$nama_alternatif		= $_POST['nama_alternatif'];
-		$nilai_kriteria1		= $_POST['nilai_kriteria1'];
-		$nilai_kriteria2		= $_POST['nilai_kriteria2'];
-		$nilai_kriteria3		= $_POST['nilai_kriteria3'];
-		$nilai_kriteria4		= $_POST['nilai_kriteria4'];
-		$nilai_kriteria5		= $_POST['nilai_kriteria5'];
-		$nilai_kriteria6		= $_POST['nilai_kriteria6'];
+		$nama_alternatif		= $this->input->post('nama_alternatif');
+		$nilai_kriteria1		= $this->input->post('nilai_kriteria1');
+		$nilai_kriteria2		= $this->input->post('nilai_kriteria2');
+		$nilai_kriteria3		= $this->input->post('nilai_kriteria3');
+		$nilai_kriteria4		= $this->input->post('nilai_kriteria4');
+		$nilai_kriteria5		= $this->input->post('nilai_kriteria5');
+		$nilai_kriteria6		= $this->input->post('nilai_kriteria6');
 
 		
 		$data_tambah	= array(
@@ -185,6 +185,7 @@ class Spk_alternatif extends CI_Controller {
 		foreach ($data as $row) {
 			$nama_alternatif[$i]=$row['nama_alternatif'];
 		
+			//perhitungan matrix 
 			$hasil[$i]=($bobotalternatif1[$i]*$bobot[1])+($bobotalternatif2[$i]*$bobot[2])+($bobotalternatif3[$i]*$bobot[3])+($bobotalternatif4[$i]*$bobot[4])+($bobotalternatif5[$i]*$bobot[5])+($bobotalternatif6[$i]*$bobot[6]);	
 			//echo $hasil[$i],'<br>';
 			$proses_kedatabase= array( 'nama_alternatif' => $nama_alternatif[$i],
@@ -194,6 +195,7 @@ class Spk_alternatif extends CI_Controller {
 			$i++;
 			
 		}	
+		//menampilkan ranking
 				$data=$this->mspk_alternatif->GetRanking();
 		$this->load->view('ranking',array('data' =>$data)); 
 		

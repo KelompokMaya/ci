@@ -46,12 +46,12 @@ class Spk extends CI_Controller {
 	{
 
 
-		$id_kriteria		= $_POST['id_kriteria'];
-		$perbandingan_ket2	= $_POST['perbandingan_ket2'];
-		$perbandingan_ket3	= $_POST['perbandingan_ket3'];
-		$perbandingan_ket4	= $_POST['perbandingan_ket4'];
-		$perbandingan_ket5	= $_POST['perbandingan_ket5'];
-		$perbandingan_ket6	= $_POST['perbandingan_ket6'];
+		$id_kriteria		= $this->input->post('id_kriteria');
+		$perbandingan_ket2	= $this->input->post('perbandingan_ket2');
+		$perbandingan_ket3	= $this->input->post('perbandingan_ket3');
+		$perbandingan_ket4	= $this->input->post('perbandingan_ket4');
+		$perbandingan_ket5	= $this->input->post('perbandingan_ket5');
+		$perbandingan_ket6	= $this->input->post('perbandingan_ket6');
 
 		if ($id_kriteria=='1') {
 		$data_edit		= array(
@@ -210,6 +210,8 @@ class Spk extends CI_Controller {
 			
 			$data=$this->mspk->GetKriteria();
 			$jum_kol1 = 0;$jum_kol2 = 0;$jum_kol3 = 0;$jum_kol4 = 0;$jum_kol5 = 0;$jum_kol6 = 0;
+			
+			//menjumlahkan masing kolom
 			foreach($data as $row){
 			 $jum_kol1 += str_replace(",", "", $row['perbandingan_ket1']);
 			 $jum_kol2 += str_replace(",", "", $row['perbandingan_ket2']);
@@ -223,7 +225,7 @@ class Spk extends CI_Controller {
 
 			$where=1;
 
-
+			//menghitung nilai normalisasi kriteria
 			foreach($data as $row){
 			$hasil_bagi1=$row['perbandingan_ket1']/$jum_kol1;
 			$hasil_bagi2=$row['perbandingan_ket2']/$jum_kol2;
@@ -251,6 +253,8 @@ class Spk extends CI_Controller {
 
 		//mengecek konsisten
 		$data=$this->mspk->GetKonsisten();
+		
+		//menyimpan bobot pada pariabel
 		$i=1;
 		foreach ($data as $row) {
 			
@@ -259,6 +263,8 @@ class Spk extends CI_Controller {
 				$i++;	
 			}
 
+
+		//kali matrix antara tabel perbandingan kriteria dengan bobot kriteria
 		$i=1;
 		foreach ($data as $row) {
 		
@@ -271,7 +277,7 @@ class Spk extends CI_Controller {
 
 
 		
-
+		//menghitng t
 		$konsisten=($kali_matrik[1]/$bobot[1]+$kali_matrik[2]/$bobot[2]+$kali_matrik[3]/$bobot[3]+$kali_matrik[4]/$bobot[4]+$kali_matrik[5]/$bobot[5]+$kali_matrik[6]/$bobot[6])/6;
 		//echo $konsisten,'<br>';
 

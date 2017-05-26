@@ -91,9 +91,16 @@
                 <tbody>
               <tr style="text-align: center;">
                     <td style=";background: #3c8dbc;color: white"><?php echo $row['nama_alternatif'];  ?></td>
-                    <td><?php echo $row['nilai_kriteria1'];  ?></td>
-                    <td><?php echo $row['nilai_kriteria2'];  ?></td>
+                    <td><?php 
+                    if  ($row['nilai_kriteria1'] =='1') {
+                      echo "SMA";
+                    }if ($row['nilai_kriteria1'] =='2') {
+                      echo "S1";
+                    }if ($row['nilai_kriteria1'] =='3') {
+                      echo "S2";
                     
+                    }  ?></td>
+                    <td><?php echo $row['nilai_kriteria2'];  ?></td>                  
                     <td><?php 
                     if ($row['nilai_kriteria3']=='5') {
                       echo "23 – 25 tahun";
