@@ -50,10 +50,7 @@ class Spk_alternatif extends CI_Controller {
 
 		$tbh = $this->db->insert('alternatif',$data_tambah);
 		if($tbh>=1){
-			echo "<script>
-				alert('data berhasil ditambahkan');
-				window.location.href='alternatif';
-				</script>";
+			redirect('spk_alternatif/alternatif');
 
 		}
 		else{

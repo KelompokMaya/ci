@@ -53,7 +53,7 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h2><center> Tabel Perbandingan Kriteria </center></h2>
+      <h2><center> Alternatif </center></h2>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Alternatif</li>
@@ -75,8 +75,8 @@
                     <td style="width: 140px">Pendidikan Terakhir</td>
                     <td style="width: 150px">Nilai IPK</td>
                     <td style="width: 150px">Usia</td>
-                    <td style="width: 150px">Komunikasi</td>
                     <td style="width: 150px">Wawancara</td>
+                    <td style="width: 150px">Tes Mengajar</td>
                     <td style="width: 150px">Tes Tulis</td>
                     <td style="width: 150px">Edit</td>
                     

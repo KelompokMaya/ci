@@ -74,8 +74,8 @@
                     <td style="width: 150px">Pendidikan Terakhir</td>
                     <td style="width: 150px">Nilai IPK</td>
                     <td style="width: 150px">Usia</td>
-                    <td style="width: 150px">Komunikasi</td>
                     <td style="width: 150px">Wawancara</td>
+                    <td style="width: 150px">Tes Mengajar</td>
                     <td style="width: 150px">Tes Tulis</td>
                     <td style="width: 150px">Edit</td>
                     
